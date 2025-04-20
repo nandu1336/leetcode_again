@@ -1,7 +1,7 @@
 #started 11.22
 #ended: 11:52
 
-from typing import List 
+from typing import List, Set
 
 def search_from(board, position, word, visited, n):
     ROWS = len(board)
@@ -36,7 +36,27 @@ def foo(board, words):
     return [word for word in words if is_in_board(board, word)]
 
 
-from trie import Trie
+from tires.trie import BetterTrie
+
+
+def find_all_combos(grid: List[List[int]], first_letters: Set[str]):
+    ROWS, COLS = len(board), len(board[0])
+    
+    for i in range(ROWS):
+        for j in range(COLS):
+            if board[i][j] in first_letters:
+                pass
+
+
+def main(board, words):
+    store = BetterTrie()
+    first_letters = set([word[0] for word in words])
+    all_strings = find_all_combos(board, first_letters)
+    
+    for string in all_strings:
+        store.insert(string) 
+    
+    return [word for word in words if store.search(word)]
 
 
 if __name__ == "__main__":
