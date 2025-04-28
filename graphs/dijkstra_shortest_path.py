@@ -51,4 +51,4 @@ if __name__ == "__main__":
             ('g', 'b', 2), ('b', 'g', 2),
             ('d', 'b', 1), ('b', 'd', 1), 
             ('e', 'b', 2), ('b', 'e', 2)]
-    print(find_shortest_path(graph, 'b'))
+    print(find_shortest_path(graph, to='e', _from='a'))
