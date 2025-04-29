@@ -8,7 +8,7 @@ def has_overalap(first_interval: List[int], second_interval: List[int]) -> bool:
     el, eh = first_interval
     nl, nh = second_interval
     
-    return (nl <= el and nh >= el) or (nl >= el and nl <= eh)
+    return nl >= el and nh <= eh
 
 def merge_intervals(intervals: List[List[int]]) -> List[List[int]]:
     res = [] 
