@@ -3,15 +3,13 @@ from typing import List
 
 def max_area_of_island(grid: List[List[int]]) -> int: 
     ROWS, COLS = len(grid), len(grid[0])
-    visited = set()
     max_area = 0
 
     def dfs(x, y, area=0):
-        nonlocal ROWS, COLS, visited
+        nonlocal ROWS, COLS
         
-        if (x, y) not in visited and x >= 0 and x < ROWS and y >= 0 and y < COLS and grid[x][y] == 1:
-        
-            visited.add((x, y))
+        if x >= 0 and x < ROWS and y >= 0 and y < COLS and grid[x][y] == 1:
+            grid[x][y] = 0
             area += 1
 
             area = dfs(x + 1, y, area)
